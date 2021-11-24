@@ -18,8 +18,6 @@ import ru.javamentor.spring.boot.rest.service.UserService;
 
 import java.util.List;
 
-import java.util.stream.Collectors;
-
 @org.springframework.web.bind.annotation.RestController
 @RequestMapping("/api")
 public class RestController {
