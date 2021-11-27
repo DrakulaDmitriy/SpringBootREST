@@ -5,13 +5,11 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import ru.javamentor.spring.boot.rest.model.User;
 import ru.javamentor.spring.boot.rest.service.RoleService;
 import ru.javamentor.spring.boot.rest.service.UserService;
 
 @Controller
-@RequestMapping("/")
 public class UserController {
     private final UserService userService;
     private final RoleService roleService;
@@ -35,9 +33,9 @@ public class UserController {
 
     @GetMapping("admin")
     public String showAdminPage(@AuthenticationPrincipal User user, Model model) {
-        model.addAttribute("users", userService.getAllUsers());
+        model.addAttribute("users", userService.getUsers());
         model.addAttribute("user", user);
-        model.addAttribute("roles", roleService.getAllRoles());
+        model.addAttribute("roles", roleService.getRoles());
         return "admin_page";
     }
 }

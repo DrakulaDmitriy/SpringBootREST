@@ -11,11 +11,11 @@
 
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
-        <p class="navbar-brand text-white">
+        <a class="navbar-brand text-white">
             <b><span class="align-middle" th:text="${user.login}"></span></b>
             <span class="align-middle">with roles:</span>
             <span class="align-middle" th:text="${user.roles}"></span>
-        </p>
+        </a>
         <form th:action="@{/logout}" method="post">
             <button type="submit" class="btn btn-dark text-secondary">Logout</button>
         </form>
@@ -29,32 +29,28 @@
         <a class="nav-link active">User</a>
     </div>
 
-    <div class="container-fluid bg-light">
-        <div class="tab-content mt-3">
-            <div class="container-fluid">
-                <div class="h1">User information page</div>
-                <div class="tab-content">
-                    <div class="tab-pane fade show active" id="list" aria-labelledby="list-tab">
-                        <div class="card">
-                            <h5 class="card-header">User info</h5>
-                            <div class="card-body">
-                                <table class="table table-striped">
-                                    <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Age</th>
-                                        <th>Email</th>
-                                        <th>Login</th>
-                                        <th>Role</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody id="mainTableWithUserId">
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+    <div class="container-fluid">
+        <div class="h1">User information-page</div>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" aria-labelledby="list-tab">
+                <div class="card">
+                    <h5 class="card-header">About user</h5>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Age</th>
+                                <th>Email</th>
+                                <th>Login</th>
+                                <th>Role</th>
+                            </tr>
+                            </thead>
+                            <tbody id="mainTableWithUserId">
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

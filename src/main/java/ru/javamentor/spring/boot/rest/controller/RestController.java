@@ -31,9 +31,8 @@ public class RestController {
     }
 
     @GetMapping(value = "/users")
-    public ResponseEntity<List<User>> getAllUsers() {
-        List<User> users = userService.getAllUsers();
-        return new ResponseEntity<>(users, HttpStatus.OK);
+    public ResponseEntity<List<User>> getUsers() {
+        return new ResponseEntity<>(userService.getUsers(), HttpStatus.OK);
     }
 
     @GetMapping(value = "/user")
@@ -42,15 +41,13 @@ public class RestController {
     }
 
     @GetMapping("/roles")
-    public ResponseEntity<List<Role>> getAllRoles() {
-        List<Role> roles = roleService.getAllRoles();
-        return new ResponseEntity<>(roles, HttpStatus.OK);
+    public ResponseEntity<List<Role>> getRoles() {
+        return new ResponseEntity<>(roleService.getRoles(), HttpStatus.OK);
     }
 
     @GetMapping(value = "/users/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") long id) {
-        User user = userService.getUserById(id);
-        return new ResponseEntity<>(user, HttpStatus.OK);
+        return new ResponseEntity<>(userService.getUserById(id), HttpStatus.OK);
     }
 
     @PostMapping("/users")
